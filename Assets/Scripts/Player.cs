@@ -30,7 +30,8 @@ public class Player : NetworkBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
             targetRotation.x = 0;
             targetRotation.z = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 7f * Time.deltaTime);
+            // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 7f * Time.deltaTime);
+            transform.rotation = targetRotation;
         }
 
         if (Input.GetMouseButtonDown(0)) { // Left
