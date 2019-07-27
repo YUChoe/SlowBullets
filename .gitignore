@@ -1,1 +1,11 @@
 *.meta
+Assembly-CSharp.csproj
+.vscode/
+Library/
+Logs/
+Packages/
+ProjectSettings/
+*.sln
+Temp/
+obj/
+Assets/
