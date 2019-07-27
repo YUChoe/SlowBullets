@@ -71,21 +71,13 @@ public class Player : NetworkBehaviour
     void Rpc_Shoot() {
         // if (isLocalPlayer) return;
 
-        // Transform clone;
-        // clone = Instantiate(bullet.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
-        // clone.rotation = bulletSpawnPoint.transform.rotation;
-        // clone.GetComponent<Rigidbody>().AddForce(clone.transform.forward * bulletSpeed);
-        // print("shoot a bullet by not LocalPlayer");
-
-        GameObject clone = Instantiate(bullet, bulletSpawnPoint.transform.position, Quaternion.identity);
+        GameObject clone = Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
 
         // print("Rigidbody:" + clone.GetComponent<Rigidbody>());
-        print("bulletSpawnPoint.transform.position: " + bulletSpawnPoint.transform.position);
-        print("bulletSpawnPoint.transform.rotation: " + bulletSpawnPoint.transform.rotation);
+        // print("bulletSpawnPoint.transform.position: " + bulletSpawnPoint.transform.position);
+        // print("bulletSpawnPoint.transform.rotation: " + bulletSpawnPoint.transform.rotation);
 
-        // clone.GetComponent<Rigidbody>().AddForce(clone.transform.forward * bulletSpeed);
         clone.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
         NetworkServer.Spawn(clone);
-
     }
 }
